@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/toggle-theme/static/js/main.4446c4c6.js",
+    "main.js": "/toggle-theme/static/js/main.f3d8b231.js",
     "index.html": "/toggle-theme/index.html",
-    "main.4446c4c6.js.map": "/toggle-theme/static/js/main.4446c4c6.js.map"
+    "main.f3d8b231.js.map": "/toggle-theme/static/js/main.f3d8b231.js.map"
   },
   "entrypoints": [
-    "static/js/main.4446c4c6.js"
+    "static/js/main.f3d8b231.js"
   ]
 }
