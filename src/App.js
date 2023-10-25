@@ -6,12 +6,11 @@ import { themeContext } from "./context/themeContext"
 
 export const App = () => {
 
-  const {toggleTheme, themeToggleBtn} = useContext(themeContext);
-  
+  const { themeToggleBtn, toggleThemeFn } = useContext(themeContext);
 
   return (
     <div>
-      <button onClick={toggleTheme}>{themeToggleBtn}</button>
+      <span onClick={toggleThemeFn}>{themeToggleBtn}</span>
       <Hello />
       <Hiii />
     </div>

@@ -1,34 +1,36 @@
 import { useState } from "react"
 import { themeContext } from "./themeContext"
-import { FaToggleOn,  FaToggleOff} from "react-icons/fa6";
+import { FaToggleOn, FaToggleOff } from "react-icons/fa6";
 
-export const ThemeProvider = ({children}) => {
 
-    const dayTheme = {
-        color: 'black',
-        backgroundColor: 'white',
-    }
+const dayTheme = {
+    color: 'black',
+    backgroundColor: 'white'
+}
 
-    const nightTheme = {
-        color: 'white',
-        backgroundColor: 'black',
-    }
+const nightTheme = {
+    color: 'white',
+    backgroundColor: 'black'
+}
 
-    function toggleTheme(){
+export const ThemeProvider = ({ children }) => {
+
+    function toggleThemeFn() {
         if (theme.backgroundColor === 'white') {
             setTheme(nightTheme);
-            setThemeToggleBtn(<FaToggleOn />)
-        } else {
+            setThemeToggleBtn(<FaToggleOn style={{ fontSize: '30px' }} />)
+        }
+        else {
             setTheme(dayTheme);
-            setThemeToggleBtn(<FaToggleOff />)
+            setThemeToggleBtn(<FaToggleOff style={{ fontSize: '30px' }} />)
         }
     }
 
-    const[theme, setTheme] = useState(dayTheme);
-    const[themeToggleBtn, setThemeToggleBtn] = useState(<FaToggleOff />);
+    const [theme, setTheme] = useState(dayTheme);
+    const [themeToggleBtn, setThemeToggleBtn] = useState(<FaToggleOff style={{ fontSize: '30px' }} />);
 
-    return(
-        <themeContext.Provider value={{theme, toggleTheme, themeToggleBtn}}>
+    return (
+        <themeContext.Provider value={{ theme, themeToggleBtn, toggleThemeFn }}>
             {children}
         </themeContext.Provider>
     )
