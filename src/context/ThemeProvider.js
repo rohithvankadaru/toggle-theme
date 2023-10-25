@@ -13,21 +13,22 @@ const nightTheme = {
     backgroundColor: 'black'
 }
 
+let themeToggleBtn = <FaToggleOff style={{ fontSize: '30px' }} />;
+
 export const ThemeProvider = ({ children }) => {
 
     function toggleThemeFn() {
         if (theme.backgroundColor === 'white') {
             setTheme(nightTheme);
-            setThemeToggleBtn(<FaToggleOn style={{ fontSize: '30px' }} />)
+            themeToggleBtn = <FaToggleOn style={{ fontSize: '30px' }} />
         }
         else {
             setTheme(dayTheme);
-            setThemeToggleBtn(<FaToggleOff style={{ fontSize: '30px' }} />)
+            themeToggleBtn = <FaToggleOff style={{ fontSize: '30px' }} />
         }
     }
 
     const [theme, setTheme] = useState(dayTheme);
-    const [themeToggleBtn, setThemeToggleBtn] = useState(<FaToggleOff style={{ fontSize: '30px' }} />);
 
     return (
         <themeContext.Provider value={{ theme, themeToggleBtn, toggleThemeFn }}>
