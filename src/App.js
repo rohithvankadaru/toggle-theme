@@ -10,7 +10,7 @@ export const App = () => {
 
   return (
     <div>
-      <span onClick={toggleThemeFn}>{themeToggleBtn}</span>
+      <span >{themeToggleBtn}</span>
       <Hello />
       <Hiii />
     </div>
